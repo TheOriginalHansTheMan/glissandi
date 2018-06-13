@@ -29,7 +29,7 @@ local tickMap, tickMapSize
 
 -- Helper Functions
 local function Msg(param)
-  reaper.ShowConsoleMsg(tostring(param).."\n")
+  --reaper.ShowConsoleMsg(tostring(param).."\n")
 end
 
 local function round(num, numDecimalPlaces)
@@ -169,7 +169,7 @@ local function CalcExpTickMapEaseInOut(type, anchorPointNoteEaseIn, anchorPointN
     finalMap[pitchScaleListSize] = lastNoteStart - (expTickMap[1] * scaleFactor) -- pos of last note to be inserted..
     -- local v = pitchScaleListSize - 1
     for i = 2, pitchScaleListSize do
-      finalMap[pitchScaleListSize-i+1] = finalMap[pitchScaleListSize-i+1] - (expTickMap[i] * scaleFactor)
+      finalMap[pitchScaleListSize-i+1] = finalMap[pitchScaleListSize-i+2] - (expTickMap[i] * scaleFactor)
     end
 
   end
